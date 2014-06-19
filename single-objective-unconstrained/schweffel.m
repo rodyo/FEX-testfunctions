@@ -28,8 +28,8 @@ function varargout = schweffel(X)
     % if no input is given, return dimensions, bounds and minimum
     if (nargin == 0)
         varargout{1} = 2;  % # dims
-        varargout{2} = -500; % LB
-        varargout{3} = +500; % UB
+        varargout{2} = [-500 -500]; % LB
+        varargout{3} = [+500 +500]; % UB
         varargout{4} = [4.209687467626741e+002    4.209687464869218e+002]; % solution
         varargout{5} = -8.379657745448676e+002; % function value at solution
 

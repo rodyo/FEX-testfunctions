@@ -4,7 +4,7 @@ function ezimage(fun)
 % Name       : Rody P.S. Oldenhuis
 % E-mail     : oldenhuis@gmail.com    (personal)
 %              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace s�rl
+% Affiliation: LuxSpace sarl
 % Licence    : BSD
 
 
@@ -65,16 +65,16 @@ function ezimage(fun)
                 'Given function requires %d dimensions to be plotted, and we live in a 3-D world.', dims+1);
         end
         
-        % initialize
-        x1 = linspace(lb(1), ub(1), 100);
-        x2 = linspace(lb(2), ub(2), 100);
+        % initialize        
+        x1 = linspace(lb(1), ub(1), 150);
+        x2 = linspace(lb(2), ub(2), 150);
         x3 = zeros(length(x1), length(x2));
         
         % simply loop through the function (most functions expect 
         % [N x 2] vectors as input, so meshgrid does not work)
-        for i = 1:length(x1)
-            for j = 1:length(x2)
-                x3(i, j) = fun([x1(i), x2(j)]);
+        for ii = 1:length(x1)
+            for jj = 1:length(x2)
+                x3(ii, jj) = fun([x1(ii), x2(jj)]);
             end
         end
         
@@ -86,11 +86,13 @@ function ezimage(fun)
         surf(x1', x2', x3, 'Linestyle', 'none')
         
         % draw minima
-        plot3(solution(:,1), solution(:,2), repmat(minimum, size(solution,1), 1), ...
-            'r.', 'MarkerSize', 20)
+        if ~isnan(solution)
+            plot3(solution(:,1), solution(:,2), repmat(minimum, size(solution,1), 1), ...
+                'r.', 'MarkerSize', 20);
+        end
         
         % tiles, labels, legend
-        xlabel('$x_1$'), ylabel('$x_2$'), zlabel('F($x_1$, $x_2$)')
+        xlabel('x_1'), ylabel('x_2'), zlabel('F(x_1, x_2)')
         if (size(solution,1) > 1)
             legend([func2str(fun), '-function'], 'Global Minima')
         else
@@ -99,12 +101,12 @@ function ezimage(fun)
         
         % finalize
         view(-40, 30)
+        set(gcf, 'renderer', 'openGl');
     
     % something's wrong
     catch ME        
-        path(prevpath);        
-        throw(ME);
-        
+        path(prevpath);             
+        rethrow(ME);        
     end
     
     % reset previous path

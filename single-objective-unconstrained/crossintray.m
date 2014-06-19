@@ -9,7 +9,7 @@ function varargout = crossintray(X)
 %
 %   The global minimum is found on the planes x = 0 and y = 0, with
 %
-%                   f(x1, x2) = f(1.34951, -1.34951) = -2.062612.
+%                   f(x1, x2) = f(±1.34951, ±1.34951) = -2.062612.
 
 
 % Please report bugs and inquiries to: 

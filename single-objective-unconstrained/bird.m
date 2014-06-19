@@ -1,16 +1,15 @@
-function varargout = bukin2(X)
-% Bukin function #2
+function varargout = bird(X)
+% Bird function
 %
-%   BUKIN2([x1, x2]) returns the value of the 2nd Bukin function
+%   BIRD([x1, x2]) returns the value of the Bird function 
 %   at the specified points. [x1] and [x2] may be vectors. 
 %   The search domain is
 %
-%               -15 < x_1 < -5
-%                -3 < x_2 <  3
+%               -2pi < x_i < 2pi
 %
-%   The global minimum is 
+%   The two global minima are
 %
-%               f(x1, x2) = f(-10, 0) = 0
+%                   fmin = -106.764537
 
 
 % Please report bugs and inquiries to: 
@@ -28,13 +27,17 @@ function varargout = bukin2(X)
     % if no input is given, return dimensions, bounds and minimum
     if (nargin == 0)
         varargout{1} = 2;  % # dims
-        varargout{2} = [-15, -3]; % LB
-        varargout{3} = [-5,  +3]; % UB
-        varargout{4} = [-10, 0]; % solution
-        varargout{5} = 0; % function value at solution
+        varargout{2} = [-2*pi, -2*pi]; % LB
+        varargout{3} = [+2*pi, +2*pi]; % UB
+        varargout{4} = [4.701055751981055e+000, +3.152946019601391e+000
+                       -1.582142172055011e+000  -3.130246799635430e+000]; % solution
+        varargout{5} = -1.067645367198034e+002; % function value at solution
 
     % otherwise, output function value
     else
+        
+        % keep values in the search interval
+        X(X < -2*pi) = inf;     X(X > 2*pi) = inf;
         
         % split input vector X into x1, x2
         if size(X, 1) == 2
@@ -43,13 +46,9 @@ function varargout = bukin2(X)
             x1 = X(:, 1);        x2 = X(:, 2);
         end
         
-        % keep values in the serach interval
-        x1(x1 < -15) = inf;     x1(x1 > -5) = inf;
-        x2(x2 <  -3) = inf;     x2(x2 >  3) = inf;
-        
         % output function value
-        varargout{1} = 100*(x2 - 0.01*x1.^2 + 1) + 0.01*(x1 + 10).^2;
-    
+        varargout{1} = sin(x1).*exp((1-cos(x2)).^2) + cos(x2).*exp((1-sin(x1)).^2) + (x1-x2).^2;
+        
     end
      
 end
