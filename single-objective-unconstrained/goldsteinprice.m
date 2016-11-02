@@ -22,7 +22,7 @@ function varargout = goldsteinprice(X)
 
 
 % If you find this work useful, please consider a donation:
-% https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6G3S5UYM7HJ3N
+% https://www.paypal.me/RodyO/3.5
 
 
     % if no input is given, return dimensions, bounds and minimum
