@@ -1,7 +1,7 @@
-function varargout = rosenbruck(X)
-% Extended Rosenbruck's Banana-function, for N-dimensional input
+function varargout = rosenbrock(X)
+% Extended Rosenbrock's Banana-function, for N-dimensional input
 %
-%   ROSENBRUCK([x1, x2, .., xn]) returns the value of the Rosenbruck
+%   ROSENBROCK([x1, x2, .., xn]) returns the value of the Rosenbrock
 %   function at the specified points. All [xi] may be vectors. The search 
 %   domain is
 %
@@ -17,7 +17,7 @@ function varargout = rosenbruck(X)
 % Name       : Rody P.S. Oldenhuis
 % E-mail     : oldenhuis@gmail.com    (personal)
 %              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace s‡rl
+% Affiliation: LuxSpace s√†rl
 % Licence    : BSD
 
 
