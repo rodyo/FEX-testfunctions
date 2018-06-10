@@ -1,8 +1,8 @@
 function varargout = bird(X)
 % Bird function
 %
-%   BIRD([x1, x2]) returns the value of the Bird function 
-%   at the specified points. [x1] and [x2] may be vectors. 
+%   BIRD([x1, x2]) returns the value of the Bird function
+%   at the specified points. [x1] and [x2] may be vectors.
 %   The search domain is
 %
 %               -2pi < x_i < 2pi
@@ -12,13 +12,11 @@ function varargout = bird(X)
 %                   fmin = -106.764537
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -35,20 +33,20 @@ function varargout = bird(X)
 
     % otherwise, output function value
     else
-        
+
         % keep values in the search interval
         X(X < -2*pi) = inf;     X(X > 2*pi) = inf;
-        
+
         % split input vector X into x1, x2
         if size(X, 1) == 2
             x1 = X(1, :);        x2 = X(2, :);
         else
             x1 = X(:, 1);        x2 = X(:, 2);
         end
-        
+
         % output function value
         varargout{1} = sin(x1).*exp((1-cos(x2)).^2) + cos(x2).*exp((1-sin(x1)).^2) + (x1-x2).^2;
-        
+
     end
-     
+
 end

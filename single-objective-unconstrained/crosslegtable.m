@@ -1,7 +1,7 @@
 function varargout = crosslegtable(X)
 % Cross-leg table function
 %
-%   CROSSLEGTABLE([x1, x2]) returns the value of the Cross-legged 
+%   CROSSLEGTABLE([x1, x2]) returns the value of the Cross-legged
 %   table function at the specified points. [x1] and [x2] may be vectors.
 %   The search domain is
 %
@@ -12,13 +12,11 @@ function varargout = crosslegtable(X)
 %                   fmin = -1.
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -50,5 +48,5 @@ function varargout = crosslegtable(X)
         varargout{1} = -(abs(sin(x1).*sin(x2).*exp(abs(100 - sqrt(x1.^2 + x2.^2)/pi))) + 1).^(-0.1);
 
     end
-     
+
 end

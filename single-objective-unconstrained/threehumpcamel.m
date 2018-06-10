@@ -1,24 +1,22 @@
 function varargout = threehumpcamel(X)
-% Three hump camel back function 
+% Three hump camel back function
 %
 %   THREEHUMPCAMEL([x1, x2]) returns the value of the Zettle function at the
-%   specified points. [x1] and [x2] may be vectors. The search domain 
-%   is 
+%   specified points. [x1] and [x2] may be vectors. The search domain
+%   is
 %
 %               -5 < x_i < 5
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2) = f(0, 0) = 0.
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -50,5 +48,5 @@ function varargout = threehumpcamel(X)
         % output function value
         varargout{1} = 2*x1.^2 - 1.05*x1.^4 + x1.^6/6 + x1.*x2 + x2.^2;
     end
-     
+
 end

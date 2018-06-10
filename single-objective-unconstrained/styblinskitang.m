@@ -1,25 +1,23 @@
 function varargout = styblinskitang(X)
 % Styblinski-Tang function
 %
-%   STYBLINSKYTANG([x1, x2, ..., xn]) returns the value of the 
-%   Styblinski-Tang at the specified points. All [xi] may be vectors. 
-%   The search domain is 
+%   STYBLINSKYTANG([x1, x2, ..., xn]) returns the value of the
+%   Styblinski-Tang at the specified points. All [xi] may be vectors.
+%   The search domain is
 %
 %               -5 < x_i < 5
 %
-%   The global minimum is 
+%   The global minimum is
 %
-%               f(x1, x2, ..., xn) = 
+%               f(x1, x2, ..., xn) =
 %               f(-2.903534, -2.903534, ..., -2.903534) = -39.16599 * n
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -45,5 +43,5 @@ function varargout = styblinskitang(X)
         varargout{1} = sum(X.^4 - 16*X.^2 + 5*X, 1)/2;
 
     end
-   
+
 end

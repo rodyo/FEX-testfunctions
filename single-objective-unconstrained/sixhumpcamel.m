@@ -1,24 +1,22 @@
 function varargout = sixhumpcamel(X)
-% six hump camel back function 
+% six hump camel back function
 %
-%   SIXHUMPCAMEL([x1, x2]) returns the value of the Six Hump Camel Back 
-%   function at the specified points. [x1] and [x2] may be vectors. The 
-%   search domain is 
+%   SIXHUMPCAMEL([x1, x2]) returns the value of the Six Hump Camel Back
+%   function at the specified points. [x1] and [x2] may be vectors. The
+%   search domain is
 %
 %               -5 < x_i < 5
 %
-%   The two global minima are 
+%   The two global minima are
 %
 %               f(x1, x2) = f(+-0.088942..., -+0.721656...) = -1.031628....
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -36,20 +34,20 @@ function varargout = sixhumpcamel(X)
 
     % otherwise, output function value
     else
-        
+
         % keep all values in the search domain
         X(X < -5) = inf;        X(X > 5) = inf;
-        
+
         % split input vector X into x1, x2
         if size(X, 1) == 2
             x1 = X(1, :);        x2 = X(2, :);
         else
             x1 = X(:, 1);        x2 = X(:, 2);
         end
-        
+
         % output function value
         varargout{1} = (4 - 2.1*x1.^2 + x1.^4/3).*x1.^2 + x1.*x2 + (4*x2.^2 - 4).*x2.^2;
-        
+
     end
-     
+
 end

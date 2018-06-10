@@ -2,23 +2,21 @@ function varargout = rosenbrock(X)
 % Extended Rosenbrock's Banana-function, for N-dimensional input
 %
 %   ROSENBROCK([x1, x2, .., xn]) returns the value of the Rosenbrock
-%   function at the specified points. All [xi] may be vectors. The search 
+%   function at the specified points. All [xi] may be vectors. The search
 %   domain is
 %
 %               -100 < x_i < 100
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2, ..., xn) = f(1, 1, ..., 1) = 0
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -32,21 +30,21 @@ function varargout = rosenbrock(X)
         varargout{3} = +100; % UB
         varargout{4} = 1; % solution
         varargout{5} = 0; % function value at solution
-        
+
     % otherwise, output function value
     else
-        
+
         % keep all values within the domain
         X(X < -100) = inf;  X(X > 100) = inf;
-        
+
         % split input vector X into X1, X2
         % NOTE: proper orientation can not be determined automatically
         % the sum is taken by default over the rows:
         X1 = X(1:2:end-1, :);        X2 = X(2:2:end, :);
-        
+
         % output rowsum
         varargout{1} = sum(  100*(X2 - X1.^2).^2 + (1 - X1).^2, 1);
     end
-    
+
 end
-    
+

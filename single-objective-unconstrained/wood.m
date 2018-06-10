@@ -1,21 +1,19 @@
 function varargout = wood(X)
 % Wood function
 %
-%   WOOD([x1, x2, x3, x4]) returns the value of the Wood 
-%   function at the specified points. [x1] through [x4] may be vectors. 
+%   WOOD([x1, x2, x3, x4]) returns the value of the Wood
+%   function at the specified points. [x1] through [x4] may be vectors.
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2, x3, x4) = f(1, 1, 1, 1) = 0
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -46,5 +44,5 @@ function varargout = wood(X)
         varargout{1} = 100*(x1.^2 - x2).^2 + (x1 - 1).^2 + (x3 - 1).^2 + 90*(x3.^2 - x4).^2 + ...
             10.1*((x2 - 1).^2 + (x4 - 1).^2)  + 19.8*(x2 - 1).*(x4 - 1);
     end
-     
+
 end

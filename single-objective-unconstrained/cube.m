@@ -2,21 +2,19 @@ function varargout = cube(X)
 % Extended cube function
 %
 %   CUBE([x1, x2, ..., xn]) returns the value of the extended
-%   cube function at the specified points. All [xi] may be 
-%   vectors. 
+%   cube function at the specified points. All [xi] may be
+%   vectors.
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2, ..., xn) = f(1, 1, ..., 1) = 0.
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -33,19 +31,19 @@ function varargout = cube(X)
 
     % otherwise, output function value
     else
-        
+
         % keep values in the serach interval
         X(X < -100) = inf;     X(X > 100) = inf;
-        
+
         % NOTE: orientation can not automatically be determined.
         % Defuaults to column sums....
-        
+
         % split input vector X into X1, X2
         X1 = X(1:end-1, :);    X2 = X(2:end, :);
-        
+
         % output columnsum
         varargout{1} = sum(  100*(X2 - X1.^3).^2 + (1 - X1).^2, 1);
-        
+
     end
-     
+
 end

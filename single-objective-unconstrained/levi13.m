@@ -7,18 +7,16 @@ function varargout = levi13(X)
 %
 %               -10 < x_i < 10
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2) = f(1, 1) = 0.
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -32,24 +30,24 @@ function varargout = levi13(X)
         varargout{3} = [+10, +10]; % UB
         varargout{4} = [1,1]; % solution
         varargout{5} = 0; % function value at solution
-        
+
     % otherwise, output function value
     else
-        
+
         % keep values in teh search domain
         X(X < -10) = inf;       X(X > 10) = inf;
-        
+
         % split input vector X into x1, x2
         if size(X, 1) == 2
             x1 = X(1, :);        x2 = X(2, :);
         else
             x1 = X(:, 1);        x2 = X(:, 2);
         end
-        
+
         % output function value
         varargout{1} = sin(3*pi*x1).^2 + (x1-1).^2.*(1 + sin(3*pi*x2).^2) + ...
             (x2-1).^2.*(1 + sin(2*pi*x2).^2);
-        
+
     end
-     
+
 end

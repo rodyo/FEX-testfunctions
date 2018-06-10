@@ -8,18 +8,16 @@ function varargout = holdertable(X)
 %               -10 < x_i < 10
 %
 %   The four global minima are near the edges of the interval, and have a
-%   function value of 
+%   function value of
 %
-%       f(x*) = -1.92085026. 
+%       f(x*) = -1.92085026.
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -36,23 +34,23 @@ function varargout = holdertable(X)
                         +8.055023472141116e+000   -9.664590028909654e+000
                         -8.055023472141116e+000   -9.664590028909654e+000]; % solution
         varargout{5} = -1.920850256788675e+001; % function value at solution
-        
+
     % otherwise, output function value
     else
-        
+
         % keep values within the search interval
         X(X < -10) = inf;      X(X > 10) = inf;
-        
+
         % split input vector X into x1, x2
         if size(X, 1) == 2
             x1 = X(1, :);        x2 = X(2, :);
         else
             x1 = X(:, 1);        x2 = X(:, 2);
         end
-        
+
         % output function value
         varargout{1} = -abs(sin(x1).*cos(x2).*exp(abs(1 - sqrt(x1.^2 + x2.^2)/pi)));
-        
+
     end
-     
+
 end

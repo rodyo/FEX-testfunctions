@@ -1,22 +1,20 @@
 function varargout = trigonometric(X)
 % Trigonometric function
 %
-%   TRIGONOMETRIC([x1, x2, ..., xn]) returns the value of the 
+%   TRIGONOMETRIC([x1, x2, ..., xn]) returns the value of the
 %   trigonometric fnuction at the specified points. All [xi] may be
-%   vectors. 
+%   vectors.
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2, ..., xn) = f(0, 0, ..., 0) = 0.
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -48,5 +46,5 @@ function varargout = trigonometric(X)
         varargout{1} = sum( (n + i.*(1 - cosX) - sin(X) - sumcosX).^2, 2);
 
     end
-     
+
 end

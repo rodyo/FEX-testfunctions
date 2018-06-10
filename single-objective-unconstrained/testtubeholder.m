@@ -1,24 +1,22 @@
 function varargout = testtubeholder(X)
 % Testtube holder function
 %
-%   TESTTUBEHOLDER([x1, x2]) returns the value of the testtube holder 
-%   function at the specified points. [x1] and [x2] may be vectors. 
-%   The search domain is 
+%   TESTTUBEHOLDER([x1, x2]) returns the value of the testtube holder
+%   function at the specified points. [x1] and [x2] may be vectors.
+%   The search domain is
 %
 %               -10 < x_i < 10
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2) = f(-pi/2, 0) = -10.8723
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:

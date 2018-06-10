@@ -1,24 +1,22 @@
 function varargout = easom(X)
-% Easom function 
+% Easom function
 %
-%   EASOM([x1, x2]) returns the value of the Easom function at the 
-%   specified points. [x1] and [x2] may be vectors. The search 
+%   EASOM([x1, x2]) returns the value of the Easom function at the
+%   specified points. [x1] and [x2] may be vectors. The search
 %   domain is
 %
 %               -100 < x_i < 100
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2) = f(pi, pi) = -1.
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -35,20 +33,20 @@ function varargout = easom(X)
 
     % otherwise, output function value
     else
-        
+
         % keep values in the serach interval
         X(X < -100) = inf;     X(X > 100) = inf;
-        
+
         % split input vector X into x1, x2
         if size(X, 1) == 2
             x1 = X(1, :);        x2 = X(2, :);
         else
             x1 = X(:, 1);        x2 = X(:, 2);
         end
-        
+
         % output function value
         varargout{1} = -cos(x1).*cos(x2).*exp(-((x1-pi).^2 + (x2-pi).^2));
-        
+
     end
-    
+
 end

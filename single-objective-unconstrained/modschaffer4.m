@@ -7,18 +7,16 @@ function varargout = modschaffer4(X)
 %
 %               -100 < x_i < 100
 %
-%   The global minimum is 
+%   The global minimum is
 %
 %               f(x1, x2) = f(0, 1.25313) = 0.292579.
 
 
-% Please report bugs and inquiries to: 
+% Please report bugs and inquiries to:
 %
-% Name       : Rody P.S. Oldenhuis
-% E-mail     : oldenhuis@gmail.com    (personal)
-%              oldenhuis@luxspace.lu  (professional)
-% Affiliation: LuxSpace sàrl
-% Licence    : BSD
+% Name   : Rody P.S. Oldenhuis
+% E-mail : oldenhuis@gmail.com
+% Licence: 2-clause BSD (See Licence.txt)
 
 
 % If you find this work useful, please consider a donation:
@@ -32,23 +30,23 @@ function varargout = modschaffer4(X)
         varargout{3} = [+100, +100]; % UB
         varargout{4} = [0, 1.253131828927371e+000]; % solution
         varargout{5} = 2.925786320359805e-001; % function value at solution
-        
+
     % otherwise, output function value
-    else 
+    else
 
         % keep values within the search interval
         X(X < -100) = inf;      X(X > 100) = inf;
-        
+
         % split input vector X into x1, x2
         if size(X, 1) == 2
             x1 = X(1, :);        x2 = X(2, :);
         else
             x1 = X(:, 1);        x2 = X(:, 2);
         end
-        
+
         % output function value
         varargout{1} = 0.5  + (cos(sin(abs(x1.^2 - x2.^2))).^2 - 0.5) ./ (1+0.001*(x1.^2 + x2.^2)).^2;
-    
+
     end
-     
+
 end
